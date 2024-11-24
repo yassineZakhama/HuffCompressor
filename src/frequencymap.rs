@@ -1,11 +1,11 @@
 use std::collections::HashMap;
 
-pub fn calculate_frequency_map(s: &str) -> HashMap<char, i32> {
+pub fn calculate_frequency_table(s: &str) -> HashMap<char, i32> {
     let mut result = HashMap::new();
 
     for c in s.chars() {
-        let curr = result.entry(c).or_insert(0);
-        *curr += 1;
+        let count = result.entry(c).or_insert(0);
+        *count += 1;
     }
 
     result
@@ -19,7 +19,7 @@ mod tests {
     fn should_return_correct_frequency() {
         const INPUT: &str = "Hello, world!";
 
-        let result = calculate_frequency_map(INPUT);
+        let result = calculate_frequency_table(INPUT);
 
         assert_eq!(result.len(), 10);
 

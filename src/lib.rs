@@ -1,1 +1,2 @@
-mod frequencymap;
+pub mod frequencymap;
+pub mod huffmantree;
